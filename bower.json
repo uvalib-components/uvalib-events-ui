@@ -1,6 +1,6 @@
 {
   "name": "uvalib-events-ui",
-  "description": "This card component uses the libCal API to retrieve events and then displays them in a card layout.",
+  "description": "This card component uses the libCal API to retrieve events and lay them out in a general UI.",
   "main": "uvalib-events-ui.html",
   "dependencies": {
     "uvalib-elements": "uvalib-components/uvalib-elements#master",
