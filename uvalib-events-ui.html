@@ -155,18 +155,17 @@ This card component generates the LibCal mini calendar widget which allows for s
        * Get the Springshare parameters into a proper object.
        */
       _getParams: function(institutionId,calId,locIdsFilter,catIdsFilter,maxNumEventsShown,startDate,days,_apiKey) {
-        var params = {
-          key: _apiKey,
-          iid: institutionId,
-          cal_id: calId,
-          limit: maxNumEventsShown,
-          campus: locIdsFilter.split(/[ ]+/).join(','),
-          category: catIdsFilter.split(/[ ]+/).join(',')
-        }
-        if (locIdsFilter != '') { params.campus = locIdsFilter; }
-        if (catIdsFilter != '') { params.category = catIdsFilter; }
-        if (startDate != '') { params.date = startDate; }
-        if (days != 0) { params.days = days; }
+        var params = {};
+        if (_apiKey)  params.key= _apiKey;
+        if (institutionId)  params.iid= institutionId;
+        if (calId)  params.cal_id= calId;
+        if (maxNumEventsShown)  params.limit= maxNumEventsShown;
+        if (locIdsFilter)  params.campus= locIdsFilter.split(/[ ]+/).join(',');
+        if (catIdsFilter)  params.category= catIdsFilter.split(/[ ]+/).join(',');
+        if (locIdsFilter && locIdsFilter != '') { params.campus = locIdsFilter; }
+        if (catIdsFilter && catIdsFilter != '') { params.category = catIdsFilter; }
+        if (startDate && startDate != '') { params.date = startDate; }
+        if (days && days != 0) { params.days = days; }
         return params;
       },
 
